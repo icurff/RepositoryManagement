@@ -26,7 +26,7 @@ public class CategoryDAO implements DAOInterface<Category> {
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, t.getName());
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -43,7 +43,7 @@ public class CategoryDAO implements DAOInterface<Category> {
             st.setString(1, t.getName());
             st.setString(2, Integer.toString(t.getId()));
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class CategoryDAO implements DAOInterface<Category> {
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, Integer.toString(t.getId()));
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 e.printStackTrace();
         }
@@ -80,7 +80,7 @@ e.printStackTrace();
                 Category category = new Category(id, name);
                 arr.add(category);
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -103,7 +103,7 @@ e.printStackTrace();
                 Category category = new Category(id, name);
                 arr.add(category);
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

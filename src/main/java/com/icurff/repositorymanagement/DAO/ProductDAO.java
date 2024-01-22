@@ -53,7 +53,7 @@ public class ProductDAO implements DAOInterface<Product> {
             st.setDouble(5, t.getQuantity());
             st.setInt(6, userId);
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -93,7 +93,7 @@ public class ProductDAO implements DAOInterface<Product> {
             st.setInt(6, t.getId());
 
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -109,7 +109,7 @@ public class ProductDAO implements DAOInterface<Product> {
             PreparedStatement st = con.prepareStatement(sql);
             st.setInt(1, t.getId());
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -137,7 +137,7 @@ public class ProductDAO implements DAOInterface<Product> {
                 Product product = new Product(id, name, price, quantity, category, brand, postBy, updateAt);
                 arr.add(product);
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -165,7 +165,7 @@ public class ProductDAO implements DAOInterface<Product> {
                 Product product = new Product(id, name, price, quantity, category, brand, postBy, updateAt);
                 arr.add(product);
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

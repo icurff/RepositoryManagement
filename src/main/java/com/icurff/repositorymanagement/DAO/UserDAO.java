@@ -40,7 +40,7 @@ public class UserDAO implements DAOInterface<User> {
             st.setString(5, t.getLastname());
 
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -66,7 +66,7 @@ public class UserDAO implements DAOInterface<User> {
 
             st.setInt(5, t.getId());
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -105,7 +105,7 @@ public class UserDAO implements DAOInterface<User> {
                 st.setInt(1, t.getId());
 //            st.setString(2, t.getUsername());
                 affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
             }
 
         } catch (SQLException e) {
@@ -125,7 +125,7 @@ public class UserDAO implements DAOInterface<User> {
             while (rs.next()) {
                 return true;
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -143,7 +143,7 @@ public class UserDAO implements DAOInterface<User> {
             while (rs.next()) {
                 return true;
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -163,7 +163,7 @@ public class UserDAO implements DAOInterface<User> {
                 user.setEmail(rs.getString("email"));
                 user.setUsername(rs.getString("username"));
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -191,7 +191,7 @@ public class UserDAO implements DAOInterface<User> {
                 User user = new User(id, username, email, password, firstname, lastname, registerAt);
                 arr.add(user);
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -220,7 +220,7 @@ public class UserDAO implements DAOInterface<User> {
                 User user = new User(id, username, email, password, firstname, lastname, registerAt);
                 arr.add(user);
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -249,7 +249,7 @@ public class UserDAO implements DAOInterface<User> {
                 user.setLastname(lastname);
 
             }
-//            DbConnector.closeConnection(con);
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -278,7 +278,7 @@ public class UserDAO implements DAOInterface<User> {
 
             st.setInt(5, user.getId());
             st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
 
         } catch (SQLException e) {
 

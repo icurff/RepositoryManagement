@@ -37,9 +37,8 @@ public class BrandController {
     }
 
     public static void search(String query, JTable table) {
-
         DefaultTableModel model = (DefaultTableModel) table.getModel();
-        model.setRowCount(0);    // delete all rows when switch panel
+        model.setRowCount(0);   
         ArrayList<Brand> arr = BrandDAO.getInstance().selectByName(query.trim());
         for (Brand brand : arr) {
             model.addRow(new Object[]{brand.getId(), brand.getName()});
@@ -94,30 +93,18 @@ public class BrandController {
         XSSFSheet sheet = wordkbook.createSheet("danhsach");
         XSSFRow row = null;
         Cell cell = null;
-//        row = sheet.createRow(0);
-//        cell = row.createCell(0, CellType.STRING);
-//        cell.setCellValue("DANH SACH ");
-
         row = sheet.createRow(0);
-
         cell = row.createCell(0, CellType.STRING);
         cell.setCellValue("ID");
-
         cell = row.createCell(1, CellType.STRING);
         cell.setCellValue("Name");
-
         for (int i = 0; i < arr.size(); i++) {
-            //Modelbook book =arr.get(i);
             row = sheet.createRow(1 + i);
-
             cell = row.createCell(0, CellType.NUMERIC);
             cell.setCellValue(arr.get(i).getId());
-
             cell = row.createCell(1, CellType.STRING);
             cell.setCellValue(arr.get(i).getName());
-
         }
-
         try {
             FileOutputStream fos = new FileOutputStream(path);
             wordkbook.write(fos);
@@ -137,27 +124,18 @@ public class BrandController {
             XSSFSheet sheet = workbook.getSheetAt(0);
             DataFormatter format = new DataFormatter();
             for (Row row : sheet) {
-                if (row.getRowNum() == 0) {   // ignore 2 first row
+                if (row.getRowNum() == 0) {   
                     continue;
                 }
                 Brand brand = new Brand();
                 for (Cell cell : row) {
-
                     String formattedString = format.formatCellValue(cell);
                     int columnIndex = cell.getColumnIndex();
-
                     switch (columnIndex) {
-
-//                        case 0:
-//
-//                            brand.setId(Integer.parseInt(formattedString));
-//                            break;
                         case 1:
-
                             brand.setName(formattedString);
                             break;
                     }
-
                 }
                 arr.add(brand);
             }

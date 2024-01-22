@@ -71,7 +71,7 @@ public class ProductController {
     public static void search(String query, JTable table) {
 
         DefaultTableModel model = (DefaultTableModel) table.getModel();
-        model.setRowCount(0);    // delete all rows when switch panel
+        model.setRowCount(0);    
         ArrayList<Product> arr = ProductDAO.getInstance().selectByName(query.trim());
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         for (Product product : arr) {

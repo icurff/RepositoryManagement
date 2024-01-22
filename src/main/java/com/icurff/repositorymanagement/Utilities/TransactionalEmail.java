@@ -71,7 +71,6 @@ public class TransactionalEmail {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(TO));
             message.setSubject(SUBJECT);
             message.setContent(CONTENT, "text/html");
-            // send message
             Transport.send(message);
 
         } catch (MessagingException e) {

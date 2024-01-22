@@ -23,7 +23,7 @@ public class UserController {
     public UserController(JTable table) {
 
         DefaultTableModel model = (DefaultTableModel) table.getModel();
-        model.setRowCount(0);    // delete all rows when switch layer
+        model.setRowCount(0);   
         ArrayList<User> arr = UserDAO.getInstance().getArrayList();
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");

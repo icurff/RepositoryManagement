@@ -26,7 +26,7 @@ public class BrandDAO implements DAOInterface<Brand> {
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, t.getName());
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -43,7 +43,7 @@ public class BrandDAO implements DAOInterface<Brand> {
             st.setString(1, t.getName());
             st.setString(2, Integer.toString(t.getId()));
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class BrandDAO implements DAOInterface<Brand> {
             PreparedStatement st = con.prepareStatement(sql);
             st.setInt(1, t.getId());
             affectedRows = st.executeUpdate();
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
            
             e.printStackTrace();
@@ -81,7 +81,7 @@ public class BrandDAO implements DAOInterface<Brand> {
                 Brand brand = new Brand(id, name);
                 arr.add(brand);
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -104,7 +104,7 @@ public class BrandDAO implements DAOInterface<Brand> {
                 Brand brand = new Brand(id, name);
                 arr.add(brand);
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

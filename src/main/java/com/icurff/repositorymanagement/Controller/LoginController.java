@@ -31,7 +31,7 @@ public class LoginController {
                 JOptionPane.showMessageDialog(null, "Wrong password or email");
             }
 
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

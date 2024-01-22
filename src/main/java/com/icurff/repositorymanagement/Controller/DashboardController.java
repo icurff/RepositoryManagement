@@ -42,7 +42,7 @@ public class DashboardController {
                 
                 return rs.getInt("Total");
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -60,7 +60,7 @@ public class DashboardController {
               
                 return rs.getInt("Total");
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -78,7 +78,7 @@ public class DashboardController {
                 
                 return rs.getInt("Total");
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -96,7 +96,7 @@ public class DashboardController {
          
                 return rs.getInt("Total");
             }
-//            DbConnector.closeConnection(con);
+
         } catch (SQLException e) {
 
             e.printStackTrace();
