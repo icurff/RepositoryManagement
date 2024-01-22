@@ -283,7 +283,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat SemiBold" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Admin123"/>
+                    <Property name="text" type="java.lang.String" value="icurff"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailFieldActionPerformed"/>
@@ -325,7 +325,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat SemiBold" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Admin@123"/>
+                    <Property name="text" type="java.lang.String" value="Hai281005@"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">

@@ -20,9 +20,7 @@ public class UserDAO implements DAOInterface<User> {
         return userInstance;
     }
 
-    void checkFC() {
-
-    }
+  
 
     @Override
     public boolean add(User t) {
@@ -103,7 +101,7 @@ public class UserDAO implements DAOInterface<User> {
                 String sql = "DELETE FROM user WHERE id = ?";
                 PreparedStatement st = con.prepareStatement(sql);
                 st.setInt(1, t.getId());
-//            st.setString(2, t.getUsername());
+
                 affectedRows = st.executeUpdate();
 
             }

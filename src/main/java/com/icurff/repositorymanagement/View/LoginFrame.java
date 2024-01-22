@@ -110,7 +110,7 @@ public class LoginFrame extends javax.swing.JFrame {
         });
 
         EmailField.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
-        EmailField.setText("Admin123");
+        EmailField.setText("icurff");
         EmailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmailFieldActionPerformed(evt);
@@ -137,7 +137,7 @@ public class LoginFrame extends javax.swing.JFrame {
         });
 
         PasswordField.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
-        PasswordField.setText("Admin@123");
+        PasswordField.setText("Hai281005@");
 
         jLabel3.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
