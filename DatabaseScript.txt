@@ -1,0 +1,96 @@
+CREATE DATABASE RepositoryManagement;
+
+USE RepositoryManagement;
+
+CREATE TABLE User(
+id INT AUTO_INCREMENT Primary Key,
+username VARCHAR(100) NOT NULL,
+email VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+firstname VARCHAR(50),
+lastname VARCHAR(50),
+registerAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP)AUTO_INCREMENT = 100; 
+ 
+ 
+CREATE TABLE Brand( 
+id INT AUTO_INCREMENT Primary Key ,
+name VARCHAR(100) NOT NULL);
+
+CREATE TABLE Category( 
+id INT AUTO_INCREMENT Primary Key,
+name VARCHAR(100) NOT NULL);
+
+
+CREATE TABLE Product( 
+id INT AUTO_INCREMENT Primary Key,
+name VARCHAR(100) NOT NULL,
+price INT DEFAULT 0 ,
+quantity INT DEFAULT  0,
+categoryId INT,
+brandId INT,
+postBy INT,
+updateAt TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (postBy) REFERENCES User(id),
+FOREIGN KEY (brandId) REFERENCES Brand(id),
+FOREIGN KEY (categoryId) REFERENCES Category(id));
+
+CREATE VIEW DetailProduct  AS
+SELECT p.id ,p.name ,p.price ,p.quantity  ,c.name AS 'category' , b.name AS 'brand' ,u.username AS 'postBy',p.updateAt
+FROM product p	 
+JOIN category c ON p.categoryId = c.id
+JOIN brand b ON p.brandId = b.id
+JOIN user u ON p.postBy = u.id; 
+
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Vinamilk');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('TH true Milk');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Yomost');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Dalatmilk');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Mocchaumilk');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('OngThomilk');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Pepsi');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Cocacola');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Chuong Duong');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Pepsico');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Tân Hiệp Phát');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Hảo Hảo');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Kokomi');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Chinsu');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Red Bull');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Poca');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Heniken');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Sabeco ');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('MeatDeli');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('Hapro');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('SagriFood');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('CP Foods');
+INSERT INTO `repositorymanagement`.`brand` (`name`) VALUES ('BaF Meat');
+
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Food');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Beverage');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Dairy');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Meat');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Frozen Food');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Fruit');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Plant');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Condiment');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Confection');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Cereal');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Beef');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Fish');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Noodles');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Bakery');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Snack');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Coffee Drink');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Alcoholic Drink');
+INSERT INTO `repositorymanagement`.`category` (`name`) VALUES ('Miscellaneous');
+
+
+INSERT INTO `repositorymanagement`.`user` (`username`, `password`, `email`) VALUES ('Admin123', 'Admin@123', 'admin@email.com');
+INSERT INTO `repositorymanagement`.`user` (`username`, `password`, `email`) VALUES ('Admin281005', 'Admin@123', 'admin1@email.com');
+
+INSERT INTO `repositorymanagement`.`product` (`name`, `price`, `quantity`, `categoryId`, `brandId`, `postBy`) VALUES ('Sữa chua hương dâu', '6000', '40', '3', '3', '100');
+INSERT INTO `repositorymanagement`.`product` (`name`, `price`, `quantity`, `categoryId`, `brandId`, `postBy`) VALUES ('Sữa chua hương cam', '6000', '40', '3', '3', '100');
+INSERT INTO `repositorymanagement`.`product` (`name`, `price`, `quantity`, `categoryId`, `brandId`, `postBy`) VALUES ('Sữa chua hương việt quất', '6000', '50', '3', '3', '101');
+INSERT INTO `repositorymanagement`.`product` (`name`, `price`, `quantity`, `categoryId`, `brandId`, `postBy`) VALUES ('Sữa tươi', '7000', '80', '3', '1', '101');
+INSERT INTO `repositorymanagement`.`product` (`name`, `price`, `quantity`, `categoryId`, `brandId`, `postBy`) VALUES ('Sữa tươi', '8000', '70', '3', '2', '100');
+

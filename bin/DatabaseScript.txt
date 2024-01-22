@@ -1,0 +1,40 @@
+CREATE DATABASE RepositoryManagement;
+
+USE RepositoryManagement;
+
+CREATE TABLE User(
+id INT AUTO_INCREMENT Primary Key,
+username VARCHAR(100) NOT NULL,
+firstname VARCHAR(50)NOT NULL,
+lastname VARCHAR(50) NOT NULL,
+password VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL,
+address VARCHAR(255) NOT NULL,
+birdthday DATE NOT NULL,
+registerAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP)AUTO_INCREMENT = 100; 
+ 
+ 
+CREATE TABLE Brand( 
+id INT AUTO_INCREMENT Primary Key ,
+name VARCHAR(100) NOT NULL);
+
+CREATE TABLE Category( 
+id INT AUTO_INCREMENT Primary Key,
+name VARCHAR(100) NOT NULL);
+
+
+
+ CREATE TABLE Product( 
+id INT AUTO_INCREMENT Primary Key,
+name VARCHAR(100) NOT NULL,
+postBy INT,
+brandId INT,
+price INT DEFAULT 0 ,
+categoryId INT,
+quantity INT DEFAULT  0,
+updateAt TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (postBy) REFERENCES User(id),
+FOREIGN KEY (brandId) REFERENCES Brand(id),
+FOREIGN KEY (categoryId) REFERENCES Category(id));
+
+
