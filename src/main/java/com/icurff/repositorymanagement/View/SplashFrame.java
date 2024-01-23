@@ -103,7 +103,7 @@ public class SplashFrame extends javax.swing.JFrame {
         frame.setVisible(true);
         try {
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(20);
+                Thread.sleep(10);
                 frame.ProgressBar.setValue(i);
 
                 switch (i) {

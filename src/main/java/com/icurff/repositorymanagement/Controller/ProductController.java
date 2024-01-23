@@ -129,9 +129,7 @@ public class ProductController {
         XSSFSheet sheet = wordkbook.createSheet("danhsach");
         XSSFRow row = null;
         Cell cell = null;
-//        row = sheet.createRow(0);
-//        cell = row.createCell(0, CellType.STRING);
-//        cell.setCellValue("DANH SACH ");
+
 
         row = sheet.createRow(0);
 
@@ -154,7 +152,7 @@ public class ProductController {
         cell.setCellValue("LastUpdate");
 
         for (int i = 0; i < arr.size(); i++) {
-            //Modelbook book =arr.get(i);
+       
             row = sheet.createRow(1 + i);
 
             cell = row.createCell(0, CellType.NUMERIC);
@@ -202,7 +200,7 @@ public class ProductController {
             DataFormatter format = new DataFormatter();
            
             for (Row row : sheet) {
-                if ( row.getRowNum() == 0) {   // ignore 2 first row
+                if ( row.getRowNum() == 0) {   
                  
                     continue;
                 }
@@ -253,6 +251,8 @@ public class ProductController {
                     "data import", JOptionPane.INFORMATION_MESSAGE);
             fis.close();
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, " There is something error while importing!",
+                    "data import", JOptionPane.INFORMATION_MESSAGE);
             e.printStackTrace();
         }
 
